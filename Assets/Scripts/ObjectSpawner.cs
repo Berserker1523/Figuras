@@ -6,9 +6,8 @@ using UnityEngine.Events;
 
 public class ObjectSpawner : MonoBehaviour
 {
-    
-    [SerializeField] private string ConfigurationDataFileName = "data.csv";
-    public UnityAction<GameObject, int> onFinishedFunction;
+    public string groupConfigurationFileName;// = "data.csv";
+    public UnityAction<GameObject, int, float> onFinishedFunction;
 
     #region SpawnObjects
     protected struct Figure
@@ -34,8 +33,8 @@ public class ObjectSpawner : MonoBehaviour
     protected List<Figure> currentBoxFigures = new List<Figure>();
     private int boxCounter = 0;
     private int currentAttemptsToCreateNewBox = 0;
-    private const int attemptsToCreateNewBox = 100;
-    private const int maxTriesToSpawn = 100;
+    public int attemptsToCreateNewBox;// = 100;
+    public int maxTriesToSpawn;// = 100;
 
     private class Wall
     {
@@ -55,7 +54,7 @@ public class ObjectSpawner : MonoBehaviour
 
     #region timers
     private float spawnDelayTimer = 0f;
-    private const float SpawnDelay = 0.05f;
+    public float SpawnDelay;// = 0.05f;
 
     private float globalTimer = 0f;
     #endregion
@@ -63,7 +62,7 @@ public class ObjectSpawner : MonoBehaviour
     private const float deleteTolerance = 0.1f;
 
     // Awake is called before the first frame
-    private void Awake()
+    private void Start()
     {
         LoadGroups();
         InstantiateFigures();
@@ -294,7 +293,7 @@ public class ObjectSpawner : MonoBehaviour
             {
                 currentGroup = null;
                 Debug.Log($"boxes: {boxCounter}, timer: {globalTimer}");
-                onFinishedFunction(gameObject, boxCounter);
+                onFinishedFunction(gameObject, boxCounter, globalTimer);
                 enabled = false;
             }
         }
@@ -305,7 +304,7 @@ public class ObjectSpawner : MonoBehaviour
         StreamReader file = null;
         try
         {
-            file = File.OpenText(Path.Combine(Application.streamingAssetsPath, ConfigurationDataFileName));
+            file = File.OpenText(Path.Combine(Application.streamingAssetsPath, groupConfigurationFileName));
             string currentLine = file.ReadLine();
             while (currentLine != null)
             {

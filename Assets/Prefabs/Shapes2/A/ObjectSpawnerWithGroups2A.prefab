@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d00f24fff06cd40a07096a996fe5ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConfigurationDataFileName: data2.csv
+  groupConfigurationFileName: 
   objects2Spawn:
   - {fileID: 1959256857740284226, guid: 27e2d082a39844bf29a4e0db6f9c4e75, type: 3}
   - {fileID: 7466655575327056991, guid: 97b24194564c240468be2786564b3c92, type: 3}
@@ -52,4 +52,7 @@ MonoBehaviour:
   - {fileID: 2680312545155141311, guid: 89994a6ea88d34ba0a484d34452e2372, type: 3}
   - {fileID: 2877362591012280973, guid: 31fbbe2ee1c8f444e86894bf1be554ca, type: 3}
   - {fileID: 7402413775678610364, guid: 50bf3f22eb60942aeb730080b708b9dc, type: 3}
-  box: {fileID: 2306349381886949018, guid: 5f12b8bb05eba1f4fbdef55262dd5707, type: 3}
+  box: {fileID: 2306349381886949018, guid: e53ac8537a1e32c40a9c6b6ae2ced88c, type: 3}
+  attemptsToCreateNewBox: 0
+  maxTriesToSpawn: 0
+  SpawnDelay: 0

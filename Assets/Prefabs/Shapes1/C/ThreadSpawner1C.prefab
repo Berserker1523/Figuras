@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5476255017692028476}
   - component: {fileID: 5476255017692028467}
   m_Layer: 0
-  m_Name: ThreadSpawner
+  m_Name: ThreadSpawner1C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,8 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b13b1ca6dc9384fa74a7724c26c72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instances: 100
-  threads: 15
+  ConfigurationDataFileName: Scenario1C.csv
   objectSpawner: {fileID: 7335873423939006334, guid: e03fbd99750670b43b5b7f0b2c4d2ec4,
     type: 3}
   box: {fileID: 2306349381886949018, guid: 5f12b8bb05eba1f4fbdef55262dd5707, type: 3}
